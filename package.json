@@ -1,5 +1,5 @@
 {
-  "name": "date-time-picker",
+  "name": "time-date-picker",
   "version": "1.0.0",
   "description": "a mobile date picker",
   "main": "index.js",
@@ -13,7 +13,9 @@
   "keywords": [
     "datePicker",
     "mobile",
-    "vue"
+    "vue",
+    "date",
+    "time"
   ],
   "author": {
     "name": "muzishuiji",
