@@ -87,7 +87,155 @@
                 '            <div class="datetime-select-btn datetime-select-ok" id="datetime-select-ok-'+ _this.container + '">确定</div>\n' +
                 '        </div>\n' +
                 '</div>\n' +
-                '</div>';
+                '</div>\n' +
+                '<style>\n' +
+                '          .datetime-select-datebtn {\n' +
+                '            display: inline-block;\n' +
+                '            width: 200px;\n' +
+                '            height: 50px;\n' +
+                '            line-height: 50px;\n' +
+                '            background-color: #387ef5;\n' +
+                '            color: #fff;\n' +
+                '            text-align: center;\n' +
+                '            font-size: 20px;\n' +
+                '          }\n' +
+                '          .datetime-picker-box {\n' +
+                '            width: 100%;\n' +
+                '            height: 100%;\n' +
+                '            position: fixed; /*记得实战的时候改为fixed*/\n' +
+                '            left: 0;\n' +
+                '            top: 0;\n' +
+                '            overflow: hidden;\n' +
+                '            background-color: rgba(75,75,75,0);\n' +
+                '            transition: all .3s linear;\n' +
+                '            -webkit-transition: all .3s linear;\n' +
+                '            z-index: -1;\n' +
+                '          }\n' +
+                '          .datetime-picker-box.active {\n' +
+                '            z-index: 999 !important;\n' +
+                '            background-color: rgba(75,75,75,0.65) !important;\n' +
+                '          }\n' +
+                '          .datetime-picker-container {\n' +
+                '            width: 100%;\n' +
+                '            height: 270px;\n' +
+                '            padding-top: 20px;\n' +
+                '            position: absolute;\n' +
+                '            bottom: 0;\n' +
+                '            left: 0;\n' +
+                '            transform: translate3d(0, 101%, 0);\n' +
+                '            -webkit-transform: translate3d(0,101%,0);\n' +
+                '            background-color: #ffffff;\n' +
+                '            transition: transform .3s linear;\n' +
+                '            -webkit-transition: -webkit-transform .3s linear;\n' +
+                '            z-index: -1;\n' +
+                '          }\n' +
+                '          .datetime-picker-container-up {\n' +
+                '            bottom: 0;\n' +
+                '            transform: translate3d(0, 0, 0);\n' +
+                '            -webkit-transform: translate3d(0, 0, 0);\n' +
+                '          }\n' +
+                '          /*按钮部分样式*/\n' +
+                '          .datetime-picker-top {\n' +
+                '            width: 100%;\n' +
+                '            height: 50px;\n' +
+                '            margin-top: 30px;\n' +
+                '            box-sizing: border-box;\n' +
+                '            border-top: 1px solid #ccc;\n' +
+                '            box-sizing: border-box;\n' +
+                '          }\n' +
+                '          .datetime-picker-top .datetime-select-btn {\n' +
+                '            display: inline-block;\n' +
+                '            width: 48%;\n' +
+                '            height: 38px;\n' +
+                '            line-height: 40px;\n' +
+                '            text-align: center;\n' +
+                '            color: #387ef5;\n' +
+                '            font-weight: 600;\n' +
+                '            background-color: #fff;\n' +
+                '            border-bottom-left-radius: 20px;\n' +
+                '            border-bottom-right-radius: 20px;\n' +
+                '          }\n' +
+                '          .datetime-select-ok {\n' +
+                '            border-bottom-left-radius: 0 !important ;\n' +
+                '            border-left: 1px solid #ccc !important;\n' +
+                '          }\n' +
+                '          \n' +
+                '          /*ul选框部分样式*/\n' +
+                '          .datetime-picker-content {\n' +
+                '            clear: both;\n' +
+                '            position: relative;\n' +
+                '            left: 0;\n' +
+                '            bottom: 0;\n' +
+                '            overflow: hidden;\n' +
+                '          }\n' +
+                '          .datetime-select-box {\n' +
+                '            width: 100%;\n' +
+                '            height: 200px;\n' +
+                '            position: relative;\n' +
+                '            top: 0;\n' +
+                '            vertical-align: top;\n' +
+                '          }\n' +
+                '          .datetime-select-box-left {\n' +
+                '            width: 33.33%;\n' +
+                '            float: left;\n' +
+                '          }\n' +
+                '          .datetime-select-container {\n' +
+                '            width: 100%;\n' +
+                '            height: 100%;\n' +
+                '          \n' +
+                '          }\n' +
+                '          .datetime-select-container li {\n' +
+                '            width: 100%;\n' +
+                '            height: 40px;\n' +
+                '            line-height: 40px;\n' +
+                '            text-align: center;\n' +
+                '            list-style: none;\n' +
+                '          }\n' +
+                '          .datetime-select-box ul::-webkit-scrollbar {\n' +
+                '            display: none;\n' +
+                '          }\n' +
+                '          \n' +
+                '          /*ul选框部分 分割线样式*/\n' +
+                '          .datetime-selected-line {\n' +
+                '            width: 95%;\n' +
+                '            height: 40px;\n' +
+                '            border-top: 2px solid #1FCCA9;\n' +
+                '            border-bottom: 2px solid #1FCCA9;\n' +
+                '            position: absolute;\n' +
+                '            top: 80px;\n' +
+                '            left: 50%;\n' +
+                '            transform: translateX(-50%);\n' +
+                '            pointer-events: none;\n' +
+                '          }\n' +
+                '          /*ul选框部分 上下部分阴影样式*/\n' +
+                '          .datetime-picker-content .datetime-select-shadow-top, .datetime-picker-content .datetime-select-shadow-bottom {\n' +
+                '            width: 100%;\n' +
+                '            height: 80px;\n' +
+                '            position: absolute;\n' +
+                '            pointer-events: none;\n' +
+                '            left: 0;\n' +
+                '            z-index: 50;\n' +
+                '          }\n' +
+                '          .datetime-picker-content .datetime-select-text {\n' +
+                '            width: 30px;\n' +
+                '            height: 40px;\n' +
+                '            line-height: 40px;\n' +
+                '            position: absolute;\n' +
+                '            pointer-events: none;\n' +
+                '            left: -16%;\n' +
+                '            top: 80px;\n' +
+                '            z-index: 50;\n' +
+                '          \n' +
+                '          }\n' +
+                '          .datetime-picker-content .datetime-select-shadow-top {\n' +
+                '            top: 0;\n' +
+                '            background-image: linear-gradient(to bottom, #fff, rgba(255,255,255,0))\n' +
+                '          }\n' +
+                '          .datetime-picker-content .datetime-select-shadow-bottom {\n' +
+                '            bottom: 0;\n' +
+                '            background-image: linear-gradient(to top, #fff, rgba(255,255,255,0))\n' +
+                '          }\n' +
+                '</style>'
             $class(_this.container)[0].innerHTML += initDom;
             loop(0, _this.param.length, function (i) {
                 _this.position.push(0);
