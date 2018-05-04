@@ -12,12 +12,12 @@
 (2) AMD 方式引入:
 
 在需要使用该插件的地方定义: 
-> var DatePicker = require('PickerSelector');
+> var DatePicker = require('time-date-picker');
 
 (3) CMD方式引入:
 
 在需要使用该插件的地方定义: 
-> import DatePicker from 'PickerSelector';
+> import DatePicker from 'time-date-picker';
 
 具体使用方法,绑定相应dom结构,然后实例化该插件的方法,示例代码如下:
 
