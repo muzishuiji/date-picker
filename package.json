@@ -1,5 +1,5 @@
 {
-  "name": "date-picker",
+  "name": "date-time-picker",
   "version": "1.0.0",
   "description": "a mobile date picker",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/muzishuiji/date-picker"
   },
   "keywords": [
     "datePicker",
