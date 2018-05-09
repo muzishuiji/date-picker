@@ -15,7 +15,6 @@
         for(var i = start; i < end; i++) {
             if(func(i)) break;   //如果函数有返回值,则退出循环
         }
-  
     }
     //初始化相关参数配置
     function PickerSelector(config) {
@@ -24,7 +23,7 @@
         this.type = (config.type !== '2' && config.type !== '1' && config.type !== '0') ? 2 : config.type;
         this.dateBtn = config.dateBtn;
         this.startYear = config.startYear || 1990;
-        this.endYear = config.endYear + 1 || new Date().getFullYear();
+        this.endYear = config.endYear + 1 || new Date().getFullYear() + 1;
         this.startTime = config.startTime || new Date();
         this.totalResult = '';
         this.success = config.success;
