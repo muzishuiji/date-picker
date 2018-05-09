@@ -89,12 +89,9 @@
                             </div>
                         </div>`;
             domStyle = `<style>
-                            * {
-                                margin: 0;padding:0;
-                            }
-                            html, body {
-                                width: 100%;
-                                height: 100%;
+                            .datetime-picker-box, .datetime-picker-box * {
+                                padding: 0;
+                                margin: 0;
                             }
                             .datetime-select-datebtn {
                                 display: inline-block;
