@@ -88,159 +88,161 @@
                                 </div>
                             </div>
                         </div>`;
-            domStyle = `* {
-                margin: 0;padding:0;
-              }
-              html, body {
-                width: 100%;
-                height: 100%;
-              }
-              .datetime-select-datebtn {
-                display: inline-block;
-                width: 200px;
-                height: 50px;
-                line-height: 50px;
-                background-color: #387ef5;
-                color: #fff;
-                text-align: center;
-                font-size: 20px;
-              }
-              .datetime-picker-box {
-                width: 100%;
-                height: 100%;
-                position: fixed; /*记得实战的时候改为fixed*/
-                left: 0;
-                top: 0;
-                overflow: hidden;
-                background-color: rgba(75,75,75,0);
-                transition: all .3s linear;
-                -webkit-transition: all .3s linear;
-                z-index: -1;
-              }
-              .datetime-picker-box.active {
-                z-index: 999 !important;
-                background-color: rgba(75,75,75,0.65) !important;
-              }
-              .datetime-picker-container {
-                width: 100%;
-                height: 270px;
-                padding-top: 20px;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                transform: translate3d(0, 101%, 0);
-                -webkit-transform: translate3d(0,101%,0);
-                background-color: #ffffff;
-                transition: transform .3s linear;
-                -webkit-transition: -webkit-transform .3s linear;
-                z-index: -1;
-              }
-              .datetime-picker-container-up {
-                bottom: 0;
-                transform: translate3d(0, 0, 0);
-                -webkit-transform: translate3d(0, 0, 0);
-              }
-              /*按钮部分样式*/
-              .datetime-picker-top {
-                width: 100%;
-                height: 50px;
-                margin-top: 30px;
-                box-sizing: border-box;
-                border-top: 1px solid #ccc;
-                box-sizing: border-box;
-              }
-              .datetime-picker-top .datetime-select-btn {
-                display: inline-block;
-                width: 48%;
-                height: 38px;
-                line-height: 40px;
-                text-align: center;
-                color: #387ef5;
-                font-weight: 600;
-                background-color: #fff;
-                border-bottom-left-radius: 20px;
-                border-bottom-right-radius: 20px;
-              }
-              .datetime-select-ok {
-                border-bottom-left-radius: 0 !important ;
-                border-left: 1px solid #ccc !important;
-              }
-              
-              /*ul选框部分样式*/
-              .datetime-picker-content {
-                clear: both;
-                position: relative;
-                left: 0;
-                bottom: 0;
-                overflow: hidden;
-              }
-              .datetime-select-box {
-                width: 100%;
-                height: 200px;
-                position: relative;
-                top: 0;
-                vertical-align: top;
-              }
-              .datetime-select-box-left {
-                width: 33.33%;
-                float: left;
-              }
-              .datetime-select-container {
-                width: 100%;
-                height: 100%;
-              
-              }
-              .datetime-select-container li {
-                width: 100%;
-                height: 40px;
-                line-height: 40px;
-                text-align: center;
-                list-style: none;
-              }
-              .datetime-select-box ul::-webkit-scrollbar {
-                display: none;
-              }
-              
-              /*ul选框部分 分割线样式*/
-              .datetime-selected-line {
-                width: 95%;
-                height: 40px;
-                border-top: 2px solid #1FCCA9;
-                border-bottom: 2px solid #1FCCA9;
-                position: absolute;
-                top: 80px;
-                left: 50%;
-                transform: translateX(-50%);
-                pointer-events: none;
-              }
-              /*ul选框部分 上下部分阴影样式*/
-              .datetime-picker-content .datetime-select-shadow-top, .datetime-picker-content .datetime-select-shadow-bottom {
-                width: 100%;
-                height: 80px;
-                position: absolute;
-                pointer-events: none;
-                left: 0;
-                z-index: 50;
-              }
-              .datetime-picker-content .datetime-select-text {
-                width: 30px;
-                height: 40px;
-                line-height: 40px;
-                position: absolute;
-                pointer-events: none;
-                left: -16%;
-                top: 80px;
-                z-index: 50;
-              
-              }
-              .datetime-picker-content .datetime-select-shadow-top {
-                top: 0;
-                background-image: linear-gradient(to bottom, #fff, rgba(255,255,255,0))
-              }
-              .datetime-picker-content .datetime-select-shadow-bottom {
-                bottom: 0;
-                background-image: linear-gradient(to top, #fff, rgba(255,255,255,0))
-              }`
+            domStyle = `<style>
+                            * {
+                                margin: 0;padding:0;
+                            }
+                            html, body {
+                                width: 100%;
+                                height: 100%;
+                            }
+                            .datetime-select-datebtn {
+                                display: inline-block;
+                                width: 200px;
+                                height: 50px;
+                                line-height: 50px;
+                                background-color: #387ef5;
+                                color: #fff;
+                                text-align: center;
+                                font-size: 20px;
+                            }
+                            .datetime-picker-box {
+                                width: 100%;
+                                height: 100%;
+                                position: fixed; /*记得实战的时候改为fixed*/
+                                left: 0;
+                                top: 0;
+                                overflow: hidden;
+                                background-color: rgba(75,75,75,0);
+                                transition: all .3s linear;
+                                -webkit-transition: all .3s linear;
+                                z-index: -1;
+                            }
+                            .datetime-picker-box.active {
+                                z-index: 999 !important;
+                                background-color: rgba(75,75,75,0.65) !important;
+                            }
+                            .datetime-picker-container {
+                                width: 100%;
+                                height: 270px;
+                                padding-top: 20px;
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                transform: translate3d(0, 101%, 0);
+                                -webkit-transform: translate3d(0,101%,0);
+                                background-color: #ffffff;
+                                transition: transform .3s linear;
+                                -webkit-transition: -webkit-transform .3s linear;
+                                z-index: -1;
+                            }
+                            .datetime-picker-container-up {
+                                bottom: 0;
+                                transform: translate3d(0, 0, 0);
+                                -webkit-transform: translate3d(0, 0, 0);
+                            }
+                            /*按钮部分样式*/
+                            .datetime-picker-top {
+                                width: 100%;
+                                height: 50px;
+                                margin-top: 30px;
+                                box-sizing: border-box;
+                                border-top: 1px solid #ccc;
+                                box-sizing: border-box;
+                            }
+                            .datetime-picker-top .datetime-select-btn {
+                                display: inline-block;
+                                width: 48%;
+                                height: 38px;
+                                line-height: 40px;
+                                text-align: center;
+                                color: #387ef5;
+                                font-weight: 600;
+                                background-color: #fff;
+                                border-bottom-left-radius: 20px;
+                                border-bottom-right-radius: 20px;
+                            }
+                            .datetime-select-ok {
+                                border-bottom-left-radius: 0 !important ;
+                                border-left: 1px solid #ccc !important;
+                            }
+                            
+                            /*ul选框部分样式*/
+                            .datetime-picker-content {
+                                clear: both;
+                                position: relative;
+                                left: 0;
+                                bottom: 0;
+                                overflow: hidden;
+                            }
+                            .datetime-select-box {
+                                width: 100%;
+                                height: 200px;
+                                position: relative;
+                                top: 0;
+                                vertical-align: top;
+                            }
+                            .datetime-select-box-left {
+                                width: 33.33%;
+                                float: left;
+                            }
+                            .datetime-select-container {
+                                width: 100%;
+                                height: 100%;
+                            
+                            }
+                            .datetime-select-container li {
+                                width: 100%;
+                                height: 40px;
+                                line-height: 40px;
+                                text-align: center;
+                                list-style: none;
+                            }
+                            .datetime-select-box ul::-webkit-scrollbar {
+                                display: none;
+                            }
+                            
+                            /*ul选框部分 分割线样式*/
+                            .datetime-selected-line {
+                                width: 95%;
+                                height: 40px;
+                                border-top: 2px solid #1FCCA9;
+                                border-bottom: 2px solid #1FCCA9;
+                                position: absolute;
+                                top: 80px;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                pointer-events: none;
+                            }
+                            /*ul选框部分 上下部分阴影样式*/
+                            .datetime-picker-content .datetime-select-shadow-top, .datetime-picker-content .datetime-select-shadow-bottom {
+                                width: 100%;
+                                height: 80px;
+                                position: absolute;
+                                pointer-events: none;
+                                left: 0;
+                                z-index: 50;
+                            }
+                            .datetime-picker-content .datetime-select-text {
+                                width: 30px;
+                                height: 40px;
+                                line-height: 40px;
+                                position: absolute;
+                                pointer-events: none;
+                                left: -16%;
+                                top: 80px;
+                                z-index: 50;
+                            
+                            }
+                            .datetime-picker-content .datetime-select-shadow-top {
+                                top: 0;
+                                background-image: linear-gradient(to bottom, #fff, rgba(255,255,255,0))
+                            }
+                            .datetime-picker-content .datetime-select-shadow-bottom {
+                                bottom: 0;
+                                background-image: linear-gradient(to top, #fff, rgba(255,255,255,0))
+                            }
+                        </style>`;
             $class(_this.container)[0].innerHTML += initDom;
             $class(_this.container)[0].innerHTML += domStyle;
             loop(0, _this.param.length, function (i) {
