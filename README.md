@@ -34,6 +34,16 @@
         }
     })
 
+## 效果演示 ##
+
+#### 时间选择器 ####
+![时间选择器](https://github.com/muzishuiji/Picker/blob/master/images/datetime.png "时间选择器的演示")  
+
+#### 单列选择器 ####
+![单列选择器](https://github.com/muzishuiji/Picker/blob/master/images/singlePicker.png "单列选择器的演示") 
+
+#### 三级联动选择器 ####
+![三级联动选择器](https://github.com/muzishuiji/Picker/blob/master/images/address.png "三级联动选择器的演示") 
 
 **注意**
 在使用这个插件的时候如果遇到样式错乱的问题,需要在全局设置样式,具体原因我还不是很清楚,可能样式是因为被某个地方设置的样式覆盖导致.
